@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/player/texture.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=2]
 [ext_resource path="res://texture/player/movement-texture-player-export.png" type="Texture" id=3]
 [ext_resource path="res://texture/player/e.png" type="Texture" id=5]
 [ext_resource path="res://scripts/player/vision.gd" type="Script" id=6]
-[ext_resource path="res://music/passos.wav" type="AudioStream" id=7]
-[ext_resource path="res://scripts/player/Inventario.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 3.5 )
@@ -25,30 +23,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 1 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ null ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("action:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=3]
 resource_name = "correndo_baixo"
@@ -65,30 +39,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 7, 8 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("action:stream")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -107,30 +57,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 9, 10 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("action:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=5]
 resource_name = "correndo_lado"
@@ -147,30 +73,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 3 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("action:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -189,30 +91,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 4, 5 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ null ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("action:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=7]
 resource_name = "parado_frente"
@@ -230,18 +108,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 6, 0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ null ]
-}
 
 [sub_resource type="Animation" id=8]
 resource_name = "parado_lado"
@@ -258,18 +124,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 2 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("action:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ null ]
 }
 
 [sub_resource type="SpriteFrames" id=9]
@@ -324,12 +178,3 @@ button = NodePath("../Tecla")
 position = Vector2( -146, 82 )
 frames = SubResource( 9 )
 animation = "E"
-
-[node name="action" type="AudioStreamPlayer2D" parent="."]
-visible = false
-volume_db = -34.095
-pitch_scale = 1.28
-attenuation = 12.1257
-
-[node name="Inventario" type="Node" parent="."]
-script = ExtResource( 8 )
