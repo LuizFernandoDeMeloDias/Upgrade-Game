@@ -5,13 +5,8 @@ export var speed = 50
 var motion: Vector2 = Vector2.ZERO
 
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	move_behaviour()
-
-	
 	move_and_slide(motion)
 
 func move_behaviour() -> void:

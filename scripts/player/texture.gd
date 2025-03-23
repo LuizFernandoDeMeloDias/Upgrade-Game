@@ -1,8 +1,8 @@
 extends Sprite
 
-export(NodePath) onready var player = get_node(player) as KinematicBody2D
-export(NodePath) onready var animation = get_node(animation) as AnimationPlayer
-export(NodePath) onready var vision = get_node(vision) as RayCast2D
+export (NodePath) onready var player = get_node(player) as KinematicBody2D
+export (NodePath) onready var animation = get_node(animation) as AnimationPlayer
+export (NodePath) onready var vision = get_node(vision) as RayCast2D
 var direction = ""
 
 func _process(delta):

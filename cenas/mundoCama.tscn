@@ -1,92 +1,114 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://cenas/loja.gd" type="Script" id=1]
 [ext_resource path="res://cenas/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/Itens.gd" type="Script" id=18]
+[ext_resource path="res://cenas/HUD.gd" type="Script" id=3]
+[ext_resource path="res://cenas/Inventario.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fontes/rainyhearts.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://cenas/textureLinha.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=90]
+font_data = ExtResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 28, 27 )
 
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 35.9918, 37.4374 )
+
 [node name="mundoCama" type="Node2D"]
+scale = Vector2( 0.992962, 1.0119 )
 __meta__ = {
+"_edit_horizontal_guides_": [ -246.0 ],
 "_edit_vertical_guides_": [ -237.0 ]
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, 24 )
 z_index = 2
 collision_mask = 1
 
-[node name="Itens" type="Node2D" parent="player" groups=["itens_player"]]
-script = ExtResource( 18 )
-
-[node name="qtdPano" type="Label" parent="player/Itens"]
-margin_left = -152.0
-margin_top = -67.0
-margin_right = -112.0
-margin_bottom = -53.0
-text = "0"
-
-[node name="qtdLinha" type="Label" parent="player/Itens"]
-margin_left = -152.0
-margin_top = -83.0
-margin_right = -112.0
-margin_bottom = -69.0
-text = "0"
-
 [node name="HUD" type="CanvasLayer" parent="player"]
+script = ExtResource( 3 )
+inventario_path = NodePath("Inventario")
 
-[node name="Loja" type="Control" parent="player/HUD"]
+[node name="Inventario" parent="player/HUD" instance=ExtResource( 4 )]
+
+[node name="controllHUD" type="Control" parent="player/HUD"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 132, 16 )
 
-[node name="Panel" type="Panel" parent="player/HUD/Loja"]
+[node name="backgroundInv" type="Panel" parent="player/HUD/controllHUD"]
 self_modulate = Color( 0, 0, 0, 0.262745 )
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 19.0
+margin_left = 12.0
 
-[node name="GridContainer" type="GridContainer" parent="player/HUD/Loja/Panel"]
+[node name="gridCont" type="GridContainer" parent="player/HUD/controllHUD/backgroundInv"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 13.0
-margin_top = 8.0
-margin_right = -42.0
-margin_bottom = -28.0
+margin_left = 4.0
+margin_top = 16.0
+margin_right = -27.0
+margin_bottom = -20.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="player/HUD/Loja/Panel/GridContainer"]
-margin_right = 105.0
-margin_bottom = 34.0
+[node name="verticalCont" type="VBoxContainer" parent="player/HUD/controllHUD/backgroundInv/gridCont"]
 custom_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="player/HUD/Loja/Panel/GridContainer/VBoxContainer"]
-margin_right = 105.6
-margin_bottom = 16.0
-rect_min_size = Vector2( 105.6, 16 )
+[node name="Label" type="Label" parent="player/HUD"]
+margin_left = 1.0
+margin_top = 149.0
+margin_right = 79.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 90 )
+text = "Dinheiros: 0"
 
-[node name="TextureButton" type="TextureButton" parent="player/HUD/Loja/Panel/GridContainer/VBoxContainer/Panel"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 109.0
-margin_right = 126.0
-margin_bottom = 16.0
+[node name="loja" type="StaticBody2D" parent="." groups=["interativo"]]
+position = Vector2( 0, 60 )
+collision_layer = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+player = NodePath("../player")
 
-[node name="Panel2" type="Panel" parent="player/HUD/Loja/Panel/GridContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 105.6
-margin_bottom = 34.0
-rect_min_size = Vector2( 105.6, 16 )
+[node name="collision" type="CollisionShape2D" parent="loja"]
+shape = SubResource( 89 )
 
-[node name="TextureButton" type="TextureButton" parent="player/HUD/Loja/Panel/GridContainer/VBoxContainer/Panel2"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 109.0
-margin_right = 126.0
-margin_bottom = 16.0
-
-[node name="loja" type="StaticBody2D" parent="."]
-position = Vector2( -29, 60 )
+[node name="textureLinha" type="Sprite" parent="."]
+position = Vector2( -22.0461, 0.447079 )
+scale = Vector2( 0.27981, 0.263971 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="collision" type="CollisionShape2D" parent="loja"]
-shape = SubResource( 89 )
+[node name="linha" type="Area2D" parent="textureLinha" groups=["coletavel"]]
+collision_layer = 2
+
+[node name="Collision" type="CollisionShape2D" parent="textureLinha/linha"]
+position = Vector2( -0.392624, -1.69366 )
+shape = SubResource( 91 )
+
+[node name="textureLinha2" type="Sprite" parent="."]
+position = Vector2( 12.0851, 2.98023e-08 )
+scale = Vector2( 0.27981, 0.263971 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="linha" type="Area2D" parent="textureLinha2" groups=["coletavel"]]
+collision_layer = 2
+
+[node name="Collision" type="CollisionShape2D" parent="textureLinha2/linha"]
+position = Vector2( -0.392624, -1.69366 )
+shape = SubResource( 91 )
+
+[editable path="player"]
