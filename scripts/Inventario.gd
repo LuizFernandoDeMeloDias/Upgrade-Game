@@ -1,11 +1,7 @@
 extends Control
 
-
 export(NodePath) var grid_container_path
-
-
 var itens = []
-
 var maxslots = 16
 
 func _ready():
@@ -31,8 +27,8 @@ func add_item( amount, description , nome, icon, estocavel):
 	for i in range(len(itens)):
 		if itens[i]["nome"] == nome and itens[i]["estocavel"] == true:
 			var slot = get_node("GridContainer").get_child(i)
-			amount = itens[i]["amount"] + amount
-			slot.atualizar_amount(amount)
+			itens[i]["amount"] = itens[i]["amount"] + amount
+			slot.atualizar_amount(itens[i]["amount"])
 			return
 
 	for i in range(len(itens)):
@@ -45,3 +41,4 @@ func add_item( amount, description , nome, icon, estocavel):
 			var slot = get_node("GridContainer").get_child(i)
 			slot.atualizar_slot(nome, icon, amount, description)
 			return
+			

@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("tab") :
 		get_node("Inventario").show()
-	if get_node('../').motion.x != 0 or get_node('../').motion.y != 0 or Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		get_node("Inventario").hide()
