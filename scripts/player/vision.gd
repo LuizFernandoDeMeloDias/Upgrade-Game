@@ -6,7 +6,7 @@ func _process(delta):
 	if is_colliding():
 		var collider = get_collider()
 		if is_instance_valid(collider) and collider.is_in_group("coletavel"):
-			collider.get_node('../').coletar()
+			collider.coletar()
 		if is_instance_valid(collider) and collider.is_in_group("interativo"):
 			button.animation = "E"
 			button.visible = true

@@ -27,7 +27,7 @@ func criar_slots(maxslots):
 		)
 		get_node("GridContainer").add_child(slot_instance)
 
-func add_item(amount, nome, description, icon, estocavel):
+func add_item( amount, description , nome, icon, estocavel):
 	for i in range(len(itens)):
 		if itens[i]["nome"] == nome and itens[i]["estocavel"] == true:
 			var slot = get_node("GridContainer").get_child(i)
