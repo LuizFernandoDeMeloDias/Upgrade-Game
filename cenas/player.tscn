@@ -162,7 +162,6 @@ anims/parado_frente = SubResource( 7 )
 anims/parado_lado = SubResource( 8 )
 
 [node name="camera" type="Camera2D" parent="."]
-current = true
 
 [node name="vision" type="RayCast2D" parent="."]
 position = Vector2( 0, 5 )

@@ -15,7 +15,7 @@ func criar_slots(maxslots):
 	var slots = preload("res://cenas/SlotItem.tscn")
 	for i in range(maxslots):
 		var slot_instance = slots.instance()
-		slot_instance.name = 'emptySlot'
+		slot_instance.name = 'emptySlot' + str(i)
 		itens.append(
 			{
 				'nome': "null",
@@ -43,9 +43,5 @@ func add_item(amount, nome, description, icon, estocavel):
 			itens[i]["description"] = description
 			itens[i]['estocavel'] = estocavel
 			var slot = get_node("GridContainer").get_child(i)
-			slot.atualizar_slot(nome, icon, amount)
+			slot.atualizar_slot(nome, icon, amount, description)
 			return
-			
-
-		
-

@@ -39,7 +39,6 @@ func _process(delta):
 			fechar_loja()
 
 func remover_upgrade(id):
-	print(id)
 	for i in range(dados_loja['upgrades'].size()):
 		if dados_loja['upgrades'][i]['id'] == id:
 			dados_loja['upgrades'].remove(i)
@@ -70,6 +69,6 @@ func fechar_loja():
 	if vcon:
 		hud.hide()
 		for child in vcon.get_children():
-			child.queue_free()  # Remove todos os itens da loja
+			child.queue_free() 
 	loja_aberta = false
 
