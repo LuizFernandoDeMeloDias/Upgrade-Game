@@ -41,17 +41,25 @@ func get_drag_data(position):
 	var preview = TextureRect.new()
 	preview.texture = dados_slot["icon"]
 	set_drag_preview(preview)
-	return dados_slot  
+
+	# Adiciona uma referência ao próprio slot nos dados enviados
+	var data_to_send = dados_slot.duplicate()
+	data_to_send["origem"] = self  # Salva a referência do slot de origem
+	return data_to_send
 
 func can_drop_data(position, data):
+	print(self.name)
 	return data.has("nome") 
 
 func drop_data(position, data):
 	print(data['nome'] + ' ', dados_slot['nome'])
-	dados_slot["nome"] = data["nome"]
-	dados_slot["icon"] = data["icon"]
-	dados_slot["totalAmount"] += data["totalAmount"]
-	dados_slot["description"] = data["description"]
+	
+	# Atualiza o slot atual com os dados recebidos
+	atualizar_slot(data["nome"], data["icon"], data["totalAmount"], data["description"])
 
-	atualizar_slot(dados_slot["nome"], dados_slot["icon"], dados_slot["totalAmount"], dados_slot["description"])
+	# Se a referência do slot de origem existir, zera ele
+	if "origem" in data and data["origem"] != null:
+		data["origem"].limpar_slot()
 
+func limpar_slot():
+	atualizar_slot('', null, 0, '')  # Zera os dados do slot
