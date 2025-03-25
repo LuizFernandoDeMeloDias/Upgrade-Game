@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Loja.gd" type="Script" id=1]
 [ext_resource path="res://cenas/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=3]
 [ext_resource path="res://cenas/Inventario.tscn" type="PackedScene" id=4]
-[ext_resource path="res://cenas/linhaColetavel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://cenas/tecidoColetavel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cenas/areaplant.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 28, 27 )
@@ -70,22 +69,7 @@ player = NodePath("../player")
 [node name="collision" type="CollisionShape2D" parent="loja"]
 shape = SubResource( 89 )
 
-[node name="LinhaColetavel" parent="." instance=ExtResource( 5 )]
-position = Vector2( -23.163, 0 )
-
-[node name="LinhaColetavel2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 32.2268, 0 )
-
-[node name="LinhaColetavel4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 24.1701, -27.6707 )
-
-[node name="LinhaColetavel3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4.02835, 15.8118 )
-
-[node name="TecidoColetavel" parent="." instance=ExtResource( 6 )]
-position = Vector2( 65.4607, 23.7178 )
-
-[node name="TecidoColetavel2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -12.0851, -28.659 )
+[node name="areaplant" parent="." instance=ExtResource( 7 )]
+position = Vector2( -116.822, 31.6237 )
 
 [editable path="player"]

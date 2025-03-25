@@ -34,13 +34,15 @@ func _on_SlotItem_mouse_entered():
 
 func _on_SlotItem_mouse_exited():
 	$slottexture/background.hide()
+	
+
 
 func get_drag_data(position):
 	var preview = TextureRect.new()
 	preview.texture = dados_slot["icon"]
 	set_drag_preview(preview)
 	return dados_slot  
-	
+
 func can_drop_data(position, data):
 	return data.has("nome") 
 
@@ -52,3 +54,4 @@ func drop_data(position, data):
 	dados_slot["description"] = data["description"]
 
 	atualizar_slot(dados_slot["nome"], dados_slot["icon"], dados_slot["totalAmount"], dados_slot["description"])
+
