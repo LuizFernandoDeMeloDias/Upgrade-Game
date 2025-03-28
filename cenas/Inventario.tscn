@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Inventario.gd" type="Script" id=1]
+[ext_resource path="res://cenas/SlotItem.tscn" type="PackedScene" id=2]
 
 [node name="Inventario" type="Control" groups=["inventario"]]
 anchor_right = 1.0
@@ -21,3 +22,98 @@ rect_min_size = Vector2( 18, 18 )
 custom_constants/vseparation = 3
 custom_constants/hseparation = 18
 columns = 17
+
+[node name="SlotItem" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 0.0
+
+[node name="SlotItem2" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_right = 18.0
+
+[node name="SlotItem3" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_right = 36.0
+
+[node name="SlotItem4" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 54.0
+margin_right = 54.0
+
+[node name="SlotItem5" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 72.0
+
+[node name="SlotItem6" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_right = 90.0
+
+[node name="SlotItem7" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 108.0
+margin_right = 108.0
+
+[node name="SlotItem8" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_right = 126.0
+
+[node name="SlotItem9" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 144.0
+
+[node name="SlotItem10" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_right = 162.0
+
+[node name="SlotItem11" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_right = 180.0
+
+[node name="SlotItem12" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 198.0
+margin_right = 198.0
+
+[node name="SlotItem13" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 216.0
+margin_right = 216.0
+
+[node name="SlotItem14" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 234.0
+margin_right = 234.0
+
+[node name="SlotItem15" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_right = 252.0
+
+[node name="SlotItem16" parent="GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_right = 270.0
