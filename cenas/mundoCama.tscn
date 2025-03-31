@@ -20,7 +20,7 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -63.4465, -15.8118 )
+position = Vector2( -59.4182, -38.5414 )
 z_index = 2
 collision_mask = 1
 __meta__ = {
@@ -77,21 +77,21 @@ position = Vector2( -116.822, 31.6237 )
 script = null
 
 [node name="TecidoColetavel" parent="." instance=ExtResource( 6 )]
-position = Vector2( -88.6237, -40.5178 )
+position = Vector2( -95.6733, -11.8588 )
 
 [node name="TecidoColetavel2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -116.822, -39.5296 )
+position = Vector2( -116.822, -11.8589 )
 
 [node name="LinhaColetavel" parent="." instance=ExtResource( 5 )]
-position = Vector2( -65.4607, -40.5178 )
+position = Vector2( -74.5245, -11.8589 )
 
 [node name="LinhaColetavel2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -38.2693, -40.5178 )
+position = Vector2( -53.3757, -11.8589 )
 
 [node name="Regadorcoletavel" parent="." instance=ExtResource( 8 )]
-position = Vector2( -3.02126, -38.5414 )
+position = Vector2( -32.2268, -11.8589 )
 
 [node name="Regadorcoletavel2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -8.0567, -11.8589 )
+position = Vector2( -11.078, -11.8589 )
 
 [editable path="player"]

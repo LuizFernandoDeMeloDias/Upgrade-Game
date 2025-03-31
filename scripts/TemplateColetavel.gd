@@ -16,10 +16,9 @@ func _ready():
 		'nome': nome,
 		'description': description,
 		'icon': icon,
-		'estocavel': estocavel
-		
+		'estocavel': estocavel,
+		'backup': self
 	}
-
 
 func coletar():
 	get_tree().call_group('inventario', 'add_item', dados_coletavel)
