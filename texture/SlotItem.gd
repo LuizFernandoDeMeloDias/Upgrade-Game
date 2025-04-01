@@ -25,9 +25,7 @@ func atualizar_slot(data):
 	dados_slot['backup'] = self
 	
 func get_drag_data(position):
-	
 	var data = dados_slot
-	
 	var preview = TextureRect.new()
 	preview.texture = get_node("itemTexture").texture
 	preview.expand = true
@@ -48,10 +46,14 @@ func set_empty_slot():
 
 
 func can_drop_data(position, data):
-	
 	return true
+
 
 func drop_data(position, data):
 	data.backup.atualizar_slot(dados_slot)
 	atualizar_slot(data)
+	
+	get_tree().call_group('inventario', 'atualizar_inventario')
+	
+	
 

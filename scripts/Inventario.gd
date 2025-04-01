@@ -10,17 +10,32 @@ func _process(delta):
 		indexSelectedSlot -= 1
 		get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
 		get_node("GridContainer").get_child(indexSelectedSlot + 1).modulate = 'ffffff'
+		get_slot()
 	if Input.is_action_just_pressed("ui_scroll_up") and indexSelectedSlot != 15:
 		indexSelectedSlot += 1
 		get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
 		get_node("GridContainer").get_child(indexSelectedSlot - 1).modulate = 'ffffff'
+		get_slot()
 	
 func _ready():
 	get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
 	for i in range(get_node("GridContainer").get_child_count()):
 		var slot = get_node("GridContainer").get_child(i)
-		var dados_slot = slot.dados_slot
-		itens.append(dados_slot)
+		itens.append(slot.dados_slot)
+
+
+func get_slot():
+	var itemname = get_node("GridContainer").get_child(indexSelectedSlot).dados_slot['nome']
+	print(itemname)
+
+
+
+
+func atualizar_inventario():
+	itens.clear()
+	for i in range(get_node("GridContainer").get_child_count()):
+		var slot = get_node("GridContainer").get_child(i)
+		itens.append(slot.dados_slot)
 
 func add_item(dados_coletavel):
 	for i in range(get_node("GridContainer").get_child_count()):
@@ -33,7 +48,8 @@ func add_item(dados_coletavel):
 			slot.atualizar_slot(itens[i])
 			
 			return
-		elif itens[i]['nome'] == null: # Verifica se tem um slot vazio
+	for i in range(get_node("GridContainer").get_child_count()):
+		if itens[i]['nome'] == null: # Verifica se tem um slot vazio
 			itens[i] = dados_coletavel
 			var slot = get_node("GridContainer").get_child(i)
 			slot.atualizar_slot(itens[i])
