@@ -3,7 +3,7 @@ extends TextureButton
 var dados_slot = {
 	"nome": null,
 	"icon": null,
-	"totalAmount": 0,
+	"amount": 0,
 	"description": '',
 	'backup': self
 }
@@ -22,6 +22,7 @@ func atualizar_slot(data):
 	get_node("itemTexture").texture = dados_slot['icon']
 	get_node("slottexture/amount").text = str(dados_slot['amount'])
 	get_node("slottexture/background/description").text = dados_slot['description']
+	dados_slot['backup'] = self
 	
 func get_drag_data(position):
 	

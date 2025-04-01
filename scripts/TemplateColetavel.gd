@@ -17,7 +17,7 @@ func _ready():
 		'description': description,
 		'icon': icon,
 		'estocavel': estocavel,
-		'backup': self
+		'backup': null
 	}
 
 func coletar():
