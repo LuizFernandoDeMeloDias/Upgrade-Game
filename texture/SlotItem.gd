@@ -5,7 +5,8 @@ var dados_slot = {
 	"icon": null,
 	"amount": 0,
 	"description": '',
-	'backup': self
+	'backup': self,
+	"funcionalidade": null
 }
 func _ready():
 	pass
@@ -40,7 +41,8 @@ func set_empty_slot():
 	"icon": null,
 	"amount": 0,
 	"description": '',
-	'backup': self
+	'backup': self,
+	"funcionalidade": null
 	}
 	atualizar_slot(dados_slot)
 

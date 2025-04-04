@@ -12,7 +12,7 @@ amount = 3
 nome = "Linha"
 description = "Uma Linha usada para coisas de linha"
 icon = ExtResource( 1 )
-estocavel = true
+funcionalidade = "res://Resources/linhafunc.gd"
 
 [node name="texture" type="Sprite" parent="."]
 

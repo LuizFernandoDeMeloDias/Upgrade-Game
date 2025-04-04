@@ -6,16 +6,16 @@ var itens = []
 var indexSelectedSlot = 0
 
 func _process(delta):
+	if Input.is_action_just_pressed("tab"):
+		usar_item()
 	if Input.is_action_just_pressed("ui_scroll_down") and indexSelectedSlot != 0:
 		indexSelectedSlot -= 1
 		get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
 		get_node("GridContainer").get_child(indexSelectedSlot + 1).modulate = 'ffffff'
-		get_slot()
 	if Input.is_action_just_pressed("ui_scroll_up") and indexSelectedSlot != 15:
 		indexSelectedSlot += 1
 		get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
 		get_node("GridContainer").get_child(indexSelectedSlot - 1).modulate = 'ffffff'
-		get_slot()
 	
 func _ready():
 	get_node("GridContainer").get_child(indexSelectedSlot).modulate = 'ff4a4a'
@@ -24,11 +24,13 @@ func _ready():
 		itens.append(slot.dados_slot)
 
 
-func get_slot():
-	var itemname = get_node("GridContainer").get_child(indexSelectedSlot).dados_slot['nome']
-	print(itemname)
-
-
+func usar_item():
+	var item = get_node("GridContainer").get_child(indexSelectedSlot).dados_slot
+	if item and item.has("funcionalidade") and item["funcionalidade"]:
+		var script_item = preload(str(item['funcionalidade'])
+		script_item.executar()
+	else:
+		print("Este item não tem funcionalidade.")
 
 
 func atualizar_inventario():

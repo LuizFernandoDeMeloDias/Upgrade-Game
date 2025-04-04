@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "Item",
+"class": "ItemFunc",
 "language": "GDScript",
-"path": "res://Resources/itens.gd"
+"path": "res://Resources/itemFunc.gd"
 } ]
 _global_script_class_icons={
-"Item": ""
+"ItemFunc": ""
 }
 
 [application]
