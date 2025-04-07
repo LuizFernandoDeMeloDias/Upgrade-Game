@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://texture/cenarios/mundo cama/Linha_item.png" type="Texture" id=1]
+[ext_resource path="res://scripts/mundo/TemplateColetavel.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="LinhaColetavel" type="Area2D" groups=["coletavel"]]
+collision_layer = 2
+script = ExtResource( 2 )
+amount = 3
+nome = "Linha"
+description = "Uma Linha usada para coisas de linha"
+icon = ExtResource( 1 )
+estocavel = true
+
+[node name="texture" type="Sprite" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

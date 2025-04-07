@@ -25,6 +25,7 @@ func atualizar_slot(data):
 	get_node("slottexture/background/description").text = dados_slot['description']
 	dados_slot['backup'] = self
 	
+	
 func get_drag_data(position):
 	var data = dados_slot
 	var preview = TextureRect.new()

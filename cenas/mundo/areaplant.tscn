@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://cenas/mundo/spotPLant.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/mundo/mundoCama/areaplant.gd" type="Script" id=2]
+[ext_resource path="res://texture/cenarios/areaPlanting.png" type="Texture" id=3]
+
+[node name="areaplant" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="areaPlantTexture" type="Sprite" parent="."]
+z_as_relative = false
+texture = ExtResource( 3 )
+
+[node name="spotPLant" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24, -24 )
+
+[node name="spotPLant2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, -24 )
+
+[node name="spotPLant3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, -24 )
+
+[node name="spotPLant4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, -24 )
+
+[node name="spotPLant5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24, -8 )
+
+[node name="spotPLant6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, -8 )
+
+[node name="spotPLant7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, -8 )
+
+[node name="spotPLant8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, -8 )
+
+[node name="spotPLant9" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24, 8 )
+
+[node name="spotPLant10" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, 8 )
+
+[node name="spotPLant11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 8 )
+
+[node name="spotPLant12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 8 )
+
+[node name="spotPLant13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 24 )
+
+[node name="spotPLant14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 24 )
+
+[node name="spotPLant15" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, 24 )
+
+[node name="spotPLant16" parent="." instance=ExtResource( 1 )]
+position = Vector2( -24, 24 )

@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/mundo/mundoCama/Loja.gd" type="Script" id=1]
+[ext_resource path="res://cenas/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/player/HUD.gd" type="Script" id=3]
+[ext_resource path="res://cenas/player/Inventario.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cenas/itens/linhaColetavel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cenas/itens/Regador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cenas/mundo/areaplant.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cenas/mundo/well.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=89]
+extents = Vector2( 28, 27 )
+
+[node name="mundoCama" type="Node2D"]
+scale = Vector2( 0.992962, 1.0119 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -246.0 ],
+"_edit_vertical_guides_": [ -237.0 ]
+}
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -59.4182, -38.5414 )
+z_index = 2
+collision_mask = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="player"]
+script = ExtResource( 3 )
+inventario_path = NodePath("Inventario")
+
+[node name="Inventario" parent="player/HUD" instance=ExtResource( 4 )]
+
+[node name="controllHUD" type="Control" parent="player/HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 132, 16 )
+
+[node name="backgroundInv" type="Panel" parent="player/HUD/controllHUD"]
+self_modulate = Color( 0, 0, 0, 0.262745 )
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+
+[node name="gridCont" type="GridContainer" parent="player/HUD/controllHUD/backgroundInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 16.0
+margin_right = -27.0
+margin_bottom = -20.0
+
+[node name="verticalCont" type="VBoxContainer" parent="player/HUD/controllHUD/backgroundInv/gridCont"]
+custom_constants/separation = 2
+
+[node name="loja" type="StaticBody2D" parent="." groups=["interativo"]]
+position = Vector2( 0, 60 )
+collision_layer = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+player = NodePath("../player")
+
+[node name="collision" type="CollisionShape2D" parent="loja"]
+shape = SubResource( 89 )
+
+[node name="areaplant" parent="." instance=ExtResource( 7 )]
+position = Vector2( -116.822, 31.6237 )
+script = null
+
+[node name="LinhaColetavel" parent="." instance=ExtResource( 5 )]
+position = Vector2( -137.971, -17.7883 )
+
+[node name="LinhaColetavel2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -107.758, -16.8001 )
+
+[node name="LinhaColetavel3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -82.5812, -15.8118 )
+
+[node name="LinhaColetavel4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -48.3402, -16.8001 )
+
+[node name="Regadorcoletavel" parent="." instance=ExtResource( 6 )]
+position = Vector2( -9.06379, -30.6354 )
+amount = 6
+
+[node name="well" parent="." instance=ExtResource( 8 )]
+position = Vector2( -127.9, -61.2709 )
+
+[editable path="player"]

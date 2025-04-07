@@ -4,7 +4,9 @@ export var speed = 50
 
 var motion: Vector2 = Vector2.ZERO
 
-
+func _ready():
+	Global.player = self
+	
 func _physics_process(delta):
 	move_behaviour()
 	move_and_slide(motion)

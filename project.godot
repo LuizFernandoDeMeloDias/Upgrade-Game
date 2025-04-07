@@ -10,19 +10,23 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "ItemFunc",
+"class": "ItemBase",
 "language": "GDScript",
-"path": "res://Resources/itemFunc.gd"
+"path": "res://scripts/resources/item_base.gd"
 } ]
 _global_script_class_icons={
-"ItemFunc": ""
+"ItemBase": ""
 }
 
 [application]
 
 config/name="Clicler Clicker"
-run/main_scene="res://cenas/mundoCama.tscn"
+run/main_scene="res://cenas/mundo/mundoCama.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [display]
 

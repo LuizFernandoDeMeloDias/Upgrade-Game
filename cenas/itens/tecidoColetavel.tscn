@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://texture/cenarios/mundo cama/teste1.png" type="Texture" id=1]
+[ext_resource path="res://scripts/mundo/TemplateColetavel.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="TecidoColetavel" type="Area2D" groups=["coletavel"]]
+collision_layer = 2
+script = ExtResource( 2 )
+amount = 1
+nome = "Tecido"
+description = "Tecido que é um tecido ._."
+icon = ExtResource( 1 )
+estocavel = true
+
+[node name="texture" type="Sprite" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
