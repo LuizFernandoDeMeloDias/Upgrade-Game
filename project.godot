@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "ItemBase",
 "language": "GDScript",
 "path": "res://scripts/resources/item_base.gd"
+}, {
+"base": "ItemBase",
+"class": "Regador",
+"language": "GDScript",
+"path": "res://scripts/resources/regador.gd"
 } ]
 _global_script_class_icons={
-"ItemBase": ""
+"ItemBase": "",
+"Regador": ""
 }
 
 [application]

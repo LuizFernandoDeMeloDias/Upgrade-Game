@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/mundo/mundoCama/Loja.gd" type="Script" id=1]
 [ext_resource path="res://cenas/player/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://cenas/itens/Regador.tscn" type="PackedScene" id=6]
 [ext_resource path="res://cenas/mundo/areaplant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://cenas/mundo/well.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cenas/itens/tecidoColetavel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 28, 27 )
@@ -20,7 +21,7 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -59.4182, -38.5414 )
+position = Vector2( -64.4536, -42.4943 )
 z_index = 2
 collision_mask = 1
 __meta__ = {
@@ -32,6 +33,8 @@ script = ExtResource( 3 )
 inventario_path = NodePath("Inventario")
 
 [node name="Inventario" parent="player/HUD" instance=ExtResource( 4 )]
+anchor_bottom = 0.0
+margin_bottom = 24.0
 
 [node name="controllHUD" type="Control" parent="player/HUD"]
 visible = false
@@ -73,21 +76,24 @@ shape = SubResource( 89 )
 position = Vector2( -116.822, 31.6237 )
 script = null
 
+[node name="TecidoColetavel" parent="." instance=ExtResource( 9 )]
+position = Vector2( -165.162, -18.7766 )
+
 [node name="LinhaColetavel" parent="." instance=ExtResource( 5 )]
-position = Vector2( -137.971, -17.7883 )
+position = Vector2( -139.985, -18.7766 )
 
 [node name="LinhaColetavel2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -107.758, -16.8001 )
+position = Vector2( -114.808, -18.7766 )
 
 [node name="LinhaColetavel3" parent="." instance=ExtResource( 5 )]
-position = Vector2( -82.5812, -15.8118 )
+position = Vector2( -90.6379, -18.7766 )
 
 [node name="LinhaColetavel4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -48.3402, -16.8001 )
+position = Vector2( -67.4749, -18.7766 )
 
 [node name="Regadorcoletavel" parent="." instance=ExtResource( 6 )]
-position = Vector2( -9.06379, -30.6354 )
-amount = 6
+position = Vector2( -44.3119, -18.7766 )
+amount = 0
 
 [node name="well" parent="." instance=ExtResource( 8 )]
 position = Vector2( -127.9, -61.2709 )

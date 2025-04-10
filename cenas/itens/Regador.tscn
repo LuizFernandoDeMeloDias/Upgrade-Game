@@ -14,7 +14,6 @@ totalAmount = 10
 nome = "Regador"
 description = "Serve pra fazer oque um regador faz de melhor..."
 icon = ExtResource( 1 )
-estocavel = true
 item_script = ExtResource( 3 )
 
 [node name="texture" type="Sprite" parent="."]

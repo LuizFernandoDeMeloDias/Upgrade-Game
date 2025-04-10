@@ -5,23 +5,21 @@
 
 [node name="Inventario" type="Control" groups=["inventario"]]
 anchor_right = 1.0
-anchor_bottom = 0.15
+anchor_bottom = 0.106
+margin_bottom = -0.0800018
 script = ExtResource( 1 )
 grid_container_path = NodePath("GridContainer")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-anchor_left = 0.061
-anchor_top = 0.167
-anchor_right = 0.939
-anchor_bottom = 0.833
-margin_left = -0.0199852
-margin_top = -0.00899982
-margin_right = 0.019989
-margin_bottom = 0.00899696
+anchor_left = 0.041
+anchor_right = 0.947
+anchor_bottom = 1.0
+margin_left = -0.120001
+margin_right = -0.0400085
 rect_min_size = Vector2( 18, 18 )
-custom_constants/vseparation = 3
+custom_constants/vseparation = 18
 custom_constants/hseparation = 18
-columns = 17
+columns = 16
 
 [node name="SlotItem" parent="GridContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0

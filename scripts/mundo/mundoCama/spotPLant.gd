@@ -2,6 +2,11 @@ extends Area2D
 
 var regar = false
 var foiMolhada = false
+var foiPlantada = false
+
+var planta: Dictionary
+
+
 
 func podeSerMolhada():
 	return not foiMolhada
@@ -12,8 +17,9 @@ func molharPlanta():
 		$spotTexture.texture = textura
 		print("Planta molhada!")
 		foiMolhada = true
-	else:
-		print('Essa planta já está molhada!')
+
+func plantarPlanta(dadosPlanta: Dictionary) -> void:
+	pass
 
 
 func _on_spotPLant_mouse_entered():
